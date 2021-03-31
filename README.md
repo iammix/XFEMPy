@@ -6,8 +6,8 @@ This is a Python package that solves fracture problems in a 2D linear-elastic so
 
 ### Issues and Support
 
-For questions pleas use Github Issues for this repo.  
-If you would like to contribute to this project send me an email to arrange the tasks of the this project.
+For questions please use Github Issues for this repo.  
+If you would like to contribute to this project email me to arrange the tasks.
 
 ### Releases
 
