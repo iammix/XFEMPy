@@ -4,6 +4,10 @@ JOBS_LIBRARY
 JOBS_RESULTS
 supplementary
 .DS_Store
+.idea
+Reference/Source Code/
+
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
