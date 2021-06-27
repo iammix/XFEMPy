@@ -17,4 +17,4 @@ def LgWeight(N, a, b):
     xu = np.linspace(-1, 1, N1)
 
     # Initial Guess
-    y = np.cos((2*(0:N)'+1)*pi/(2*N+2))+(0.27/N1)*sin(pi*xu*N/N2);
+    y = np.cos((2*(0:N)'+1)*pi/(2*N+2))+(0.27/N1)*sin(pi*xu*N/N2)
