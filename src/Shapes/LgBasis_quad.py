@@ -53,4 +53,8 @@ def LgBasis_quad(p, n):
         d[1, 5] = -1.00 * y * (1 + x)
         d[1, 6] = 0.50 * (1 - x) * (1 + x)
         d[1, 7] = 1.00 * y * (x - 1)
-    return s, d
+    return s, 
+    
+if __name__ == '__main__':
+    pass
+
