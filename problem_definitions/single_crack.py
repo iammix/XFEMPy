@@ -21,6 +21,65 @@ class Single_Crack():
         with_Updata = 1
         with_RdoStd = 1
         with_MapTyp = 1
+        with_AdpEnr = 0
+
+        # Energy minimization
+        with_GLwInc = False
+        with_GLwDir = False
+        with_DirAvg = False
+
+        if with_GLwDir:
+            nInter_dir = 5
+            dBetaTol_iterDir = 0.01 * math.pi / 180
+            dBetaMin_iterDir = 0.01 * math.pi / 180
+        if with_GLwInc:
+            dBetaMin_iterDir = 5.0 * math.pi / 180 * 0.0
+
+        with_RfnInc = False
+        with_RfnXrs = False
+
+        if with_RfnInc or with_RfnXrs:
+            nRefine_inc = 1
+            nRefine_xrs = 3
+
+            dBetaMin_mshFine = (5.0 * math.pi / 180) * 0.0
+            dBetaMax_mshCors = (1.0 * math.pi / 180) * 0.0
+
+        with_BndXrs = True
+        if with_BndXrs:
+            with_BndXrs_refine = True
+            with_BndXrs_freeze = True
+
+        with_JIntegral = False
+        with_Roughness = False
+
+        save_CracksEnd = False
+        save_CracksAll = False
+        save_StressAll = False
+        save_DisplcAll = False
+        save_StateVerb = False
+        save_Roughness = False
+
+        # Plotting (during Analysis)
+        plot_mesh = True
+        plot_domain = False
+        plot_cracks = True
+        plot_enriched = True
+        plot_displace = False
+        plot_deformed = False
+        plot_VonMises = True
+        plot_vmsContr = False
+
+        # Plotting (final)
+        plot_potential = False
+        plot_dissipGlb = False
+        plot_roughness = False
+
+        # Generate Videos
+        mov_cracks = False
+        mov_vonmises = False
+        mov_deformed = False
+
 
         # Material Data
         self.problemType = 'PlaneStress'
