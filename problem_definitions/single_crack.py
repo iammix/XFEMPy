@@ -1,6 +1,74 @@
 import os
 import time
+import math
+import numpy as np
 
 
-def job_main():
-    job_subID = 'single_crack'
+class Single_Crack():
+    def __init__(self):
+        self.job_subID = 'single_crack'
+        nStep = 0
+        self.with_meshread = 0
+        self.with_layered = 0
+        self._check_meshread_layerd()
+        self.mesh_ElemType = 'Q4'
+        self.mesh_EnriSize = 'big'
+        self.kind_LawDir = 'energy'
+        self.kind_LawCrt = 'energy'
+        self.kind_CrwCrt = 'all'
+        if self.kind_CrwCrt == 'custom':
+            with_CrwCrt_inf = 0.5
+        with_Updata = 1
+        with_RdoStd = 1
+        with_MapTyp = 1
+
+        # Material Data
+        self.problemType = 'PlaneStress'
+        self.lengthUnits = 'mm'
+        self.nPhase = 1
+        self.E = 1000
+        self.v = 0.3
+        self.k_crt = 1
+
+    def _unit_conversion(self):
+        if self.lengthUnits == '\mum':
+            self.k_crt = self.k_crt * 1e3
+        elif self.lengthUnits == 'mm':
+            self.k_crt = self.k_crt * math.sqrt(1e3)
+        elif self.lengthUnits == 'm':
+            pass
+        else:
+            self._check_units()
+
+    # Check Methods
+    def _check_units(self):
+        if self.lengthUnits not in ['\mum', 'mm', 'm']:
+            raise ValueError("The lengthUnits must ne \mum, mm, m")
+
+    def _check_problemType(self):
+        if self.problemType not in ['PlaneStress', 'PlaneStrain']:
+            raise ValueError("The problemType must be PlaneStress, PlaneStrain")
+
+    def _check_kind_CrwCrt(self):
+        if self.kind_CrwCrt not in ['maxinum', 'symmetric', 'critical', 'all', 'custom']:
+            raise ValueError("The kind_CrwCrt  must be maxinum, symmetric, critical, all, custom")
+
+    def _check_kind_LawCrt(self):
+        if self.kind_LawCrt not in ['tension', 'energy', 'J-int', 'eliptic', 'Hayashi', 'Nuismer']:
+            raise ValueError("The kind_LawCrt must be tension, energy, J-int, eliptic, Hayashi, Nuismer")
+
+    def _check_kind_LawDir(self):
+        if self.kind_LawDir is not 'maxhoop' or 'energy' or 'symmetry':
+            raise ValueError("The kind_LawDir must be maxhoop, energy or symmetry")
+
+    def _check_ElemType(self):
+        if self.mesh_ElemType is not 'Q4' or 'T3':
+            raise ValueError("The mesh_ElemType must be Q4 or T3")
+
+    def _check_EnriSize(self):
+        if self.mesh_EnriSize is not 'small' or 'normal' or 'big':
+            raise ValueError("The mesh_EnriSize must be small, normal or big")
+
+    def _check_meshread_layerd(self):
+        if self.with_layered == 1:
+            self.with_meshread = 0
