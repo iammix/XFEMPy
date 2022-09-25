@@ -2,14 +2,15 @@ import os
 import time
 import math
 import numpy as np
+from utilities import read_mesh_file
 
 
 class Single_Crack():
     def __init__(self):
         self.job_subID = 'single_crack'
         nStep = 0
-        self.with_meshread = 0
-        self.with_layered = 0
+        self.with_meshread = False
+        self.with_layered = False
         self._check_meshread_layerd()
         self.mesh_ElemType = 'Q4'
         self.mesh_EnriSize = 'big'
@@ -18,10 +19,10 @@ class Single_Crack():
         self.kind_CrwCrt = 'all'
         if self.kind_CrwCrt == 'custom':
             with_CrwCrt_inf = 0.5
-        with_Updata = 1
-        with_RdoStd = 1
-        with_MapTyp = 1
-        with_AdpEnr = 0
+        with_Update = True
+        with_RdoStd = True
+        with_MapTyp = True
+        with_AdpEnr = False
 
         # Energy minimization
         with_GLwInc = False
@@ -88,6 +89,9 @@ class Single_Crack():
         self.E = 1000
         self.v = 0.3
         self.k_crt = 1
+
+        # Mesh
+        if self.with_meshread:
 
     def _unit_conversion(self):
         if self.lengthUnits == '\mum':
