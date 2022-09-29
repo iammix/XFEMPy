@@ -5,6 +5,7 @@ import numpy as np
 from utilities import read_mesh_file
 
 
+
 class Single_Crack():
     def __init__(self):
         self.job_subID = 'single_crack'
@@ -92,6 +93,9 @@ class Single_Crack():
 
         # Mesh
         if self.with_meshread:
+            mesh_fileRoot = self.meshFile
+            
+
 
     def _unit_conversion(self):
         if self.lengthUnits == '\mum':
