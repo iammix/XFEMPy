@@ -39,5 +39,10 @@ def mesh_layers_t3(xlim, Y, N, h0):
         # assignees: iammix
         # milestone: v0.1.0_rc1
         coords, lnods = meshRect_t3(xlim, [Y[0], Y[1] - dy], hx)
+        # TODO Create stepDown_t3 function
+        # labels: enhancement
+        # assignees: iammix
+        # milestone: v0.1.0_rc1
+        c, l = stepDown_t3(xlim, [Y[1] - dy, Y[1]], nx + 1, N[1] - N[0] + 1)
 
 
