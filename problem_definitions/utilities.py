@@ -5,7 +5,7 @@ import gmshparser
 def read_mesh_file(mesh_fileType: str):
     cBCNod = []
     cBCCrd = []
-    # TODO Develope GSM file reader
+    # TODO Develop GSM file reader
     # labels: enhancement
     # assignees: iammix
     # milestone: v0.1.0_rc1

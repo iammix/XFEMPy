@@ -5,7 +5,6 @@ import numpy as np
 from utilities import read_mesh_file
 
 
-
 class Single_Crack():
     def __init__(self):
         self.job_subID = 'single_crack'
@@ -82,7 +81,6 @@ class Single_Crack():
         mov_vonmises = False
         mov_deformed = False
 
-
         # Material Data
         self.problemType = 'PlaneStress'
         self.lengthUnits = 'mm'
@@ -94,7 +92,25 @@ class Single_Crack():
         # Mesh
         if self.with_meshread:
             mesh_fileRoot = self.meshFile
-            
+
+    def _create_mesh(self):
+        # TODO Create a mesh generator for single crack model
+        # labels: enhancement
+        # assignees: iammix
+        # milestone: v0.1.0_rc1
+        L = 1.0
+        H = 1.0
+        if self.with_layered:
+            yi = [-H / 2, -H / 4, H / 4, H / 2]
+            Ni = [0, 2, 0]
+        nH = 12
+        ne = np.ceil([L / H], 1) * nH
+        he = H / ne[1]
+        xlim = [0, L]
+        ylim = [-H / 2, H / 2]
+
+        if self.mesh_ElemType == 'T3':
+            if self.with_layered:
 
 
     def _unit_conversion(self):
