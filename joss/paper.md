@@ -7,7 +7,6 @@ tags:
 authors:
   - name: Konstantinos E. Mixios
     orcid: 0000-0003-1397-0439
-    equal-contrib: true
     affiliation: "1"
 affiliations:
  - name: Aristotle University of Thessaloniki, Thessaloniki, Greece
