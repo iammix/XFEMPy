@@ -6,6 +6,7 @@ supplementary
 .DS_Store
 .idea
 Reference/XFEM_Fracture2D/
+Reference/Code/
 doc/.venv/
 
 # Byte-compiled / optimized / DLL files
@@ -147,3 +148,6 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+
+# Project Folders
+Reference/XFEM_Fracture2D-master
