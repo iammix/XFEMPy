@@ -5,8 +5,6 @@ JOBS_RESULTS
 supplementary
 .DS_Store
 .idea
-Reference/XFEM_Fracture2D/
-Reference/Code/
 doc/.venv/
 
 # Byte-compiled / optimized / DLL files
