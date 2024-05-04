@@ -3,7 +3,6 @@
 ### Description
 
 This is a Python package that solves fracture problems in a 2D linear-elastic solid.
-buntu
 ### Issues and Support
 
 For questions please use Github Issues for this repo.  
